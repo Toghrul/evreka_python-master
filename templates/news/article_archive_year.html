@@ -1,0 +1,13 @@
+{% extends "news/article_base.html" %}
+
+{% block news_title %}Articles for {{ year }}{% endblock %}
+
+{% block news_pagination %}
+	{% if previous_date %}
+	<a href="{% url news_year previous_date|date:"Y" %}">{{ previous_date|date:"Y" }}</a>
+	{% endif %}
+
+	{% if next_date %}
+	<a href="{% url news_year next_date|date:"Y" %}">{{ next_date|date:"Y" }}</a>
+	{% endif %}
+{% endblock %}

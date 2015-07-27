@@ -1,0 +1,86 @@
+{% extends "landing/base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% block TITLE %}{% trans "Hakkımızda" %}{% endblock %}
+
+{% block BEFORE_HEAD_CLOSE %}
+
+    <style type="text/css">
+        html, body, #map-canvas {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #footerwrap{
+            margin-top: 80px;
+        }
+    </style>
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGnlhckFLHqdGERt_Zcqza8U4gTo4Rhdo">
+    </script>
+    <script type="text/javascript">
+    var map;
+    var myLatlng = new google.maps.LatLng(39.898750, 32.775996);
+        function initialize() {
+            var mapOptions = {
+                center: myLatlng,
+                zoom: 15
+            };
+            map = new google.maps.Map(document.getElementById('map-canvas'),
+                    mapOptions);
+            map.setMapTypeId(google.maps.MapTypeId.SATELLITE);
+                    var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title: 'Evreka Yazılım'
+        });
+        }
+
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+{% endblock %}
+
+
+{% block BODY_BLOCK %}
+
+    <div id="about" name="about">
+        <div class="container" style="width: 70%;;margin-bottom: 50px;">
+            <div class="row white">
+                <h2  class="centered">{% trans "Hakkımızda" %}</h2>
+                <hr>
+                <div class="row">
+                    <p>
+                        {% trans "Ekibimiz bir araya geldiği ilk günden bu yana globali hedefleyen yapı ve vizyonda çalışmalarını sürdürmektedir. Fakat ekibimiz, bunu gerçekleştirebilmenin ilk adımının, Türkiye’de bir başarı hikayesi yaratmak, burada sağlam bir çekirdek model oluşturmak olduğuna inanmaktadır. Dolayısıyla ilk çalışmalarımızı Türkiye’de gerçekleştirdikten sonra mümkün olduğunca hızlı bir şekilde yurt dışına açılmak şirketimizin ana hedeflerinden birini oluşturmaktadır." %}
+                    </p>
+                </div>
+                <div class="row row-centered">
+<!--                    <div class="media col-md-10 col-xs-12 col-centered"> -->
+                        <div class="media-middle col-md-offset-1 col-md-2 col-xs-3">
+                            <img class="media-object img-responsive"
+                                 src="{% static 'landing/assets/img/kosgeb.png' %}" alt="KOSGEB">
+                        </div>
+                        <div class="media-middle col-md-offset-1 col-md-4 col-xs-4" style="margin-top: 18px">
+                            <img class="media-object img-responsive"
+                                 src="{% static 'landing/assets/img/odtu_tknokent.png' %}" alt="ODTUTEKNOKENT">
+                        </div>
+                        <div class="media-middle col-md-offset-1 col-md-2 col-xs-3">
+                            <img class="media-object img-responsive"
+                                 src="{% static 'landing/assets/img/tepav.png' %}" alt="TEPAV">
+                        </div>
+<!--                    </div>  -->
+                </div>
+                <div class="row" style="margin-top: 80px;height: 350px">
+                    <div id="map-canvas"></div>
+                </div>
+
+            </div>
+            <!-- row -->
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block BEFORE_BODY_CLOSE %}{% endblock %}

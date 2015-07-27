@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document>
+	<name>arac3_1.kml</name>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Placemark>
+		<name>arac3_1</name>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				31.91690532411429,40.15304099344254,0 31.91696753385867,40.15304693943254,0 31.91763628730131,40.1531182861586,0 31.91779186276962,40.15219109802646,0 31.91713867219799,40.15209597690021,0 31.91730980439846,40.15109151755298,0 31.91793188699643,40.1511034282599,0 31.91802519871818,40.151115318616,0 31.91816519076314,40.15058634050551,0 31.91867840421399,40.15059824291766,0 31.91854616510453,40.15174535409832,0 31.91852281714576,40.15220300720701,0 31.91842947308141,40.15288056834027,0 31.91844502524496,40.15288651229534,0 31.9190826697757,40.1529400194194,0 31.91901267121557,40.15328474303787,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+</Document>
+</kml>

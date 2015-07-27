@@ -1,0 +1,13 @@
+{% extends "news/article_base.html" %}
+
+{% block news_title %}Details{% endblock %}
+
+{% block news_pagination %}
+	{% if article.get_previous_by_date_created %}
+		<a href="{{ article.get_previous_by_date_created.get_absolute_url }}">Previous Article - {{ article.get_previous_by_date_created.title_eng }}</a>
+	{% endif %}
+
+	{% if article.get_next_by_date_created %}
+		<a href="{{ article.get_next_by_date_created.get_absolute_url }}">Next Article - {{ article.get_next_by_date_created.title_eng }}</a>
+	{% endif %}
+{% endblock %}

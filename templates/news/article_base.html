@@ -1,0 +1,47 @@
+{% extends "landing/base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% block TITLE %}{% trans "Haberler" %}{% endblock %}
+
+{% block BEFORE_HEAD_CLOSE %}
+
+    <style type="text/css">
+        html, body, #map-canvas {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #footerwrap{
+            margin-top: 80px;
+        }
+    </style>
+
+{% endblock %}
+
+{% block BODY_BLOCK %}
+
+    <div id="news" name="news">
+        <div class="container" style="width: 90%;margin-bottom: 50px;margin-top: 60px">
+            <div class="row white">
+                <h2  class="centered">{% trans "Haberler" %}</h2>
+                <hr>
+                <div class="news">
+                    {% block news_articles %}
+                        {% for article in page.object_list %}
+                            {% include "news/article.html" %}
+                        {% endfor %}
+                    {% endblock %}
+
+                    <div class="news-pagination">
+                        {% block news_pagination %}
+                            {% include "news/paginator.html" %}
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block BEFORE_BODY_CLOSE %}{% endblock %}

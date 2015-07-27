@@ -1,0 +1,35 @@
+{% load staticfiles %}
+{% load i18n %}
+{# override this template to change the article layout across all templates #}
+
+{% get_current_language as LANGUAGE_CODE %}
+<div class="container" >
+    <div class="news-article">
+        <div class="row row-centered">
+<!--             <div class="media col-centered"> -->
+                 <div class="media-middle centered" style="margin-bottom: 20px">
+                     {% if LANGUAGE_CODE == "tr" %}
+                        <h3><a href="{{ article.get_absolute_url }}">{{ article.title }}</a></h3>
+                     {% else %}
+                        <h3><a href="{{ article.get_absolute_url }}">{{ article.title_eng }}</a></h3>
+                     {% endif %}
+                 </div>
+        </div>
+        <div class="row row-centered">
+
+                <img class="media-object col-md-offset-1 col-md-3 col-xs-4 img-responsive"
+                      src="{{ article.news_image.url }}" alt="news_image">
+
+                <div class="media-middle col-md-offset-1 col-md-6 col-xs-6">
+                    {% if LANGUAGE_CODE == "tr" %}
+                        {{ article.body|linebreaks}}
+                    {% else %}
+                        {{ article.body_eng|linebreaks }}
+                    {% endif %}
+                        <br>
+                        <h4><small>{{ article.date_created }}</small></h4>
+                </div>
+        </div>
+<!--             </div> -->
+    </div>
+</div>

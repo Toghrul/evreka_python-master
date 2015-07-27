@@ -1,0 +1,96 @@
+{% extends "landing/base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% block TITLE %}{% trans "Nedir?" %}{% endblock %}
+
+{% block BEFORE_HEAD_CLOSE %}
+
+    <style>
+        .custom-fa {
+
+            vertical-align: middle;
+            margin-right: 25px;
+            width: 70px;
+        }
+        #footerwrap{
+            margin-top: 0px;
+        }
+
+    </style>
+{% endblock %}
+
+
+{% block BODY_BLOCK %}
+
+
+    <div id="about" name="about">
+        <div class="container" style="width: 70%; margin-bottom: 50px">
+            <div class="row white">
+                <h2 class="centered">{% trans "Evreka Nedir?" %}</h2>
+                <hr>
+                <div>
+                    <p>
+                        {% trans "EVREKA akıllı atık toplama sistemi geleneksel atık toplama sistemlerine yenilikçi ve çevreci bir çözüm sunmaktadır. Evreka, kablosuz doluluk algılama sensörleriyle çöp konteynerlerının doluluk oranını anlık olarak ölçer, M2M teknolojisi ile bu veriyi bulut sistemine gönderir. Topladığı bu verileri işleyerek optimize edilmiş günlük atık toplama rotaları oluşturur. Günlük oluşturulan bu rotalar, şoförlerin kolaylıkla kullanabileceği navigasyon sistemlerine iletilir. Bu sayede optimize edilmiş rotayı takip eden şoförler sadece gerekli noktaları ziyaret eder. Böylece, zaman ve enerji kaybı önlenir, karbondioksit salınımı azalır ve çöp toplama maliyetinde &#37 45’e varan azalmalar görülür." %}
+                    </p>
+
+                    {% comment %}
+                    <div class="row" id="pics">
+                        <div class="col-md-4 col-sm-4">
+                            <img src="{% static 'landing/assets/img/3.png' %}" class="img-responsive center-block">
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <img src="{% static 'landing/assets/img/2.png' %}" class="img-responsive center-block">
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <img src="{% static 'landing/assets/img/1.png' %}" class="img-responsive center-block">
+                        </div>
+                    </div>
+                    {% endcomment %}
+                    <div class="row" id="nedir-icons" style="margin-bottom: 140px; margin-top: 80px">
+                        <div class="col-md-4 col-sm-4">
+                            <div class="service-item">
+                                <span class="fa-stack fa-3x">
+                                <i class="fa fa-users fa-stack-2x"></i>
+                            </span>
+                                <br><br>
+                                <h4>
+                                    {% trans "Daha iyi hizmet" %}
+                                </h4>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="service-item">
+                                <span class="fa-stack fa-3x">
+                                <i class="fa fa-money fa-stack-2x"></i>
+                            </span>
+                                <br><br>
+                                <h4>
+                                    {% trans "Maliyette &#37 45'e varan azalma" %}
+                                </h4>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4">
+                            <div class="service-item">
+                                <span class="fa-stack fa-3x">
+                                <i class="fa fa-tree fa-stack-2x"></i>
+                            </span>
+                                <br><br>
+                                <h4>
+                                    {% trans "Daha az CO2 salınımı" %}
+                                </h4>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block BEFORE_BODY_CLOSE %}{% endblock %}

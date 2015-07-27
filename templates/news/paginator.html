@@ -1,0 +1,14 @@
+{% if page.has_previous %}
+<div class="news-pages-previous">
+	<a href="">Prev</a>
+</div>
+{% endif %}
+
+<div class="news-pages">
+	Page {{ page.number }} / {{ page.paginator.num_pages }}
+</div>
+
+{% if page.has_next %}
+<div class="news-pages-previous">
+</div>
+{% endif %}

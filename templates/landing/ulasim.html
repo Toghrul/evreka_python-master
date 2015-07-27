@@ -1,0 +1,81 @@
+{% extends "landing/base.html" %}
+{% load bootstrap3 %}
+{% load staticfiles %}
+{% load i18n %}
+{% block TITLE %}{% trans "Bize Ulaşın" %}{% endblock %}
+
+{% block BEFORE_HEAD_CLOSE %}
+
+{% endblock %}
+
+
+{% block BODY_BLOCK %}
+
+    <!-- ==== CONTACT ==== -->
+    <div id="contact" name="contact">
+        <div class="container">
+            <div class="row">
+
+                <h2 class="centered">{% trans "Bize Ulaşın" %}</h2>
+                <hr>
+                <div class="col-md-4 centered"><i class="fa fa-map-marker fa-2x"></i>
+
+                    <p>ODTÜ Teknokent<br>KOSGEB Tekmer Binası No:401<br>
+                        Ankara, 06800<br>Türkiye</p>
+                </div>
+                <div class="col-md-4"><i class="fa fa-envelope-o fa-2x"></i>
+
+                    <p>info@evreka.co</p>
+                </div>
+                <div class="col-md-4"><i class="fa fa-phone fa-2x"></i>
+
+                    <p> +90 312 210 13 00 / 401</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 centered">
+                    {% if success_message %}
+                        <div class="alert alert-success" role="alert">{{ success_message }}</div>
+                    {% endif %}
+                    <form id="contact" method="post" class="form" role="form" action="{% url 'evreka_ulasim' %}">
+                        {% csrf_token %}
+                        {% bootstrap_form_errors form %}
+                        <div class="row">
+                            <div class="col-xs-6 col-md-6 form-group">
+
+                                <!--input class="form-control" id="id_name" maxlength="255" name="name" placeholder="İsim"
+                                       type="text"
+                                       required/-->
+                                {% bootstrap_field form.name layout='inline' %}
+                            </div>
+                            <div class="col-xs-6 col-md-6 form-group">
+                                <!--input class="form-control" id="id_email" maxlength="75" name="email"
+                                       placeholder="E-Posta" type="email"
+                                       required/-->
+                                {% bootstrap_field form.email layout='inline' %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <!--textarea class="form-control" id="id_message" name="message" placeholder="Mesajınız"
+                              rows="5"></textarea-->
+                                {% bootstrap_field form.message layout='inline' %}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-12">
+                                <button class="btn btn btn-lg" type="submit">{% trans "Gönder" %}</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- form -->
+                </div>
+            </div>
+            <!-- row -->
+
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block BEFORE_BODY_CLOSE %}{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "landing/base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% block TITLE %}{% trans "Nasıl Çalışır?" %}{% endblock %}
+
+{% block BEFORE_HEAD_CLOSE %}
+
+    <style>
+        #pics > div > img {
+            max-height: 170px;
+        }
+
+        #pics {
+            margin-bottom: 40px;
+        }
+
+        #footerwrap{
+            margin-top: 100px;
+        }
+    </style>
+{% endblock %}
+
+
+{% block BODY_BLOCK %}
+
+    <!-- ==== HEADERWRAP ==== -->
+    <!--div id="headerwrap-normal-page" class="homepage-header" name="home">
+        <header class="clearfix">
+            <h1 class="pull-right" style="font-weight:bold; color: white; letter-spacing: inherit; margin-right: 20px">evreka</h1>
+        </header>
+    </div-->
+    <!-- /headerwrap -->
+
+    <div id="about" name="about">
+        <div class="container" style="width: 70%">
+            <div class="row white" id="pics">
+                <h2 class="centered">{% trans "Nasıl Çalışır?" %}</h2>
+                <hr>
+                <p>
+                    {% trans "Geliştirdiğimiz son teknoloji sensör modüllerimiz, çöp konteynırlarının doluluk oranlarını hassas bir şekilde ölçer.Sensör modüllerimiz tarafından alınan veri, M2M teknolojisi ile bulut sistemimize aktarılır. Bu veriler sistemimizde işlenerek saklanır. Bu sayede tüm konteynerler anlık olarak takip edilebilmektedir. Veriler bu öngörüleme algoritmasında işlenerek çöp kutularının dolum zamanını tahmin etmekte kullanılır. Bu sayede, bir sonraki günün rotası önceden oluşturulur ve planlamada kolaylık sağlanır. Öngörüleme teknolojimiz tarafından toplanmasına karar verilen çöp konteynerleri, sistemimiz tarafından oluşturalan optimize rotalar sayesinde en verimli şekilde toplanır. Oluşturulan optimize rotalar, araca yerleştirilecek akıllı ekranlar sayesinde araç sürücülerine aktarılır. Bununla birlikte sistem, hem masaüstü hem de mobil cihazlar üzerinden 7/24 kontrol edilip ölçümlenebilir. Sistem, istenilen zaman diliminde kullanıcıya gerekli raporları sunmaktadır. Bu raporlar; sistemin süreç boyunca nasıl işlediği, maddi harcamalardaki iyileştirme ve azalan zararlı gaz salınımı hakkında detaylı bilgiler verir." %}
+                </p>
+
+                <div class="col-md-4 col-sm-4">
+                    <img src="{% static 'landing/assets/img/3.png' %}" class="img-responsive center-block">
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <img src="{% static 'landing/assets/img/2.png' %}" class="img-responsive center-block">
+                </div>
+                <div class="col-md-4 col-sm-4">
+                    <img src="{% static 'landing/assets/img/1.png' %}" class="img-responsive center-block">
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block BEFORE_BODY_CLOSE %}{% endblock %}

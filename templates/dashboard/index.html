@@ -1,0 +1,307 @@
+{% extends "dashboard/base.html" %}
+{% load staticfiles %}
+
+{% block PAGE_TITLE %}
+    Anasayfa
+{% endblock %}
+
+{% block HEADER_BEFORE_END %}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGnlhckFLHqdGERt_Zcqza8U4gTo4Rhdo"></script>
+    <script type="text/javascript" src="/static/geoXML/geoxml3.js"></script>
+    <script type="text/javascript" src="/static/geoXML/ProjectedOverlay.js"></script>
+{% endblock %}
+
+
+{% block AFTER_JS_LOAD %}
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script>
+        var processed = [];
+        $.getJSON('/routing/get_last_7_day_all', function (JSONresult) {
+
+            $(function () {
+                $('#container1').highcharts({
+                    title: {
+                        text: 'Yapılan Toplam Mesafe',
+                        x: -20 //center
+                    },
+                    subtitle: {
+                        text: 'Son 7 gün',
+                        x: -20
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Kilometre (km)'
+                        },
+                        plotLines: [{
+                            value: 0,
+                            width: 1,
+                            color: '#808080'
+                        }]
+                    },
+                    xAxis: {
+                        type: 'datetime'
+                    },
+                    tooltip: {
+                        valueSuffix: ' km'
+                    },
+                    series: [{
+                        name: 'Bütün Araçlar',
+                        data: (function () {
+                            // generate an array of random data
+                            var data = [];
+
+                            for (var i = 0; i < JSONresult.length; i += 1) {
+
+                                data.push({
+                                    x: (new Date(JSONresult[i].date)).getTime(),
+                                    y: Math.round(JSONresult[i].value)
+                                });
+                            }
+                            return data;
+                        }())
+                    }]
+                });
+            });
+
+
+            $(function () {
+                $('#container2').highcharts({
+                    chart: {
+                        type: 'area'
+                    },
+                    title: {
+                        text: 'Gezilen Toplam Çöp Kutusu Sayısı'
+                    },
+                    subtitle: {
+                        text: 'Son 7 gün'
+                    },
+                    xAxis: {
+                        type: 'datetime',
+                        tickmarkPlacement: 'on',
+                        title: {
+                            enabled: false
+                        }
+                    },
+                    yAxis: {
+                        title: {
+                            text: ''
+                        },
+                        labels: {
+                            formatter: function () {
+                                return this.value;
+                            }
+                        },
+                        max: 120,
+                        min: 0
+                    },
+                    tooltip: {
+                        shared: true,
+                        valueSuffix: ' çöp kutusu'
+                    },
+                    plotOptions: {
+                        area: {
+                            stacking: 'normal',
+                            lineColor: '#666666',
+                            lineWidth: 1,
+                            marker: {
+                                lineWidth: 1,
+                                lineColor: '#666666'
+                            }
+                        }
+                    },
+                    series: [{
+                        name: 'Ziyaret Edilen Çöp Kutuları',
+                        data: (function () {
+                            // generate an array of random data
+                            var data = [];
+
+                            for (var i = 0; i < JSONresult.length; i += 1) {
+
+                                data.push({
+                                    x: (new Date(JSONresult[i].date)).getTime(),
+                                    y: JSONresult[i].bin_count
+                                });
+                            }
+                            return data;
+                        }())
+                    }]
+                });
+            });
+
+        });
+
+        $.getJSON('/routing/get_last_7_day_bin_fullness', function (JSONresult) {
+            console.log(JSONresult);
+            $(function () {
+                $('#container3').highcharts({
+                    chart: {
+                        type: 'column'
+                    },
+                    title: {
+                        text: 'Toplam Çöp Doluluk Oranları'
+                    },
+                    subtitle: {
+                        text: 'Son 7 Gün'
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Doluluk Oranı'
+                        },
+                        labels: {
+                            format: '%{value}'
+                        },
+                        min: 0,
+                        max: 100
+                    },
+                    plotOptions: {
+                        line: {
+                            dataLabels: {
+                                enabled: true
+                            },
+                            enableMouseTracking: false
+                        }
+                    },
+                    series: [{
+                        name: 'Çöp Doluluk Oranları',
+                        data: (function () {
+                            // generate an array of random data
+                            var data = [];
+
+                            for (var i = 0; i < JSONresult.length; i += 1) {
+
+                                data.push({
+                                    x: (new Date(JSONresult[i].date)).getTime(),
+                                    y: Math.round(JSONresult[i].value)
+                                });
+                            }
+                            return data;
+                        }())
+                    }],
+                    xAxis:
+                    {
+                        type: 'datetime'
+                    }
+                });
+            });
+        });
+
+    </script>
+    <script>
+        var mymap = new google.maps.Map(document.getElementById('map'));
+
+        var myparser = new geoXML3.parser({map: mymap});
+        myparser.parse('/static/sample_kml/beypazari.kml');
+
+        $('#route-date-select').change(function () {
+            //get date from date-selection list
+            date = new Date($(this).find('option:selected').val());
+            vehicle_pk = $("#vehicle-select").find('option:selected').val();
+            if (vehicle_pk != "") {
+                get_kml(date, vehicle_pk);
+            }
+        });
+        $('#vehicle-select').change(function () {
+            //get date from date-selection list
+            date = new Date($('#route-date-select').find('option:selected').val());
+            vehicle_pk = $(this).find('option:selected').val();
+            if (vehicle_pk != "") {
+                get_kml(date, vehicle_pk);
+            }
+        });
+
+
+    </script>
+
+
+{% endblock %}
+
+{% block PAGE_CONTENT_HEADER %}
+
+
+
+{% endblock %}
+
+
+{% block PAGE_CONTENT %}
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <div class="box box-solid">
+                <div class="box-header">
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body text-center">
+                    <div id="container1" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <div class="box box-solid">
+                <div class="box-header">
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body text-center">
+                    <div id="container2" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <div class="box box-solid">
+                <div class="box-header">
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                    </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body text-center">
+                    <div id="container3" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+
+        <div class="col-md-6 col-sm-12">
+            <div class="box box-solid">
+                <div class="box-header">
+
+
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                    </div>
+                </div>
+
+                <!-- /.box-header -->
+                <div class="box-body text-center">
+                    <div class="form-group">
+                        <label>Araçlar:</label><br>
+                        <select class="form-control" id="vehicle-select">
+                            <option value=""> Tüm Araçlar</option>
+                            {% for vehicle in vehicles %}
+                                <option value="{{ vehicle.pk }}">{{ vehicle }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Tarih Seçiniz</label>
+                        <select class="form-control" id="route-date-select">
+                            {% for visit in visits %}
+                                <option value="{{ visit.raw }}">{{ visit.local }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div id="map" style="min-width: 310px; height: 500px; margin: 0 auto"></div>
+                </div>
+                <!-- /.box-body -->
+            </div>
+            <!-- /.box -->
+        </div>
+        <!-- /.col -->
+
+    </div>
+{% endblock %}

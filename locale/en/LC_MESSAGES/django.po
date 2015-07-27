@@ -1,0 +1,260 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-27 16:31+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\homepage\models.py:7
+msgid "İsim"
+msgstr "Name"
+
+#: .\homepage\models.py:8
+msgid "E-Posta"
+msgstr "E-mail"
+
+#: .\homepage\models.py:9
+msgid "Mesajınız"
+msgstr "Your Message"
+
+#: .\homepage\views.py:33
+msgid "Mesajınız Gönderildi"
+msgstr "Your message has been sent"
+
+#: .\templates\landing\anasayfa.html:4 .\templates\landing\base.html:11
+#: .\templates\landing\base.html.py:56
+msgid "Anasayfa"
+msgstr "Homepage"
+
+#: .\templates\landing\anasayfa.html:17
+msgid "Akıllı Şehirler Yaratır"
+msgstr "Creates Smart Cities"
+
+#: .\templates\landing\anasayfa.html:19
+msgid "Akıllı Çöp Toplama Sistemleri"
+msgstr "Smart Garbage Collecting Systems"
+
+#: .\templates\landing\anasayfa.html:26
+msgid "Evreka ile daha az maliyet, daha iyi hizmet"
+msgstr "Evreka - Better Service with Less Cost"
+
+#: .\templates\landing\anasayfa.html:39
+msgid "Ölçme"
+msgstr "Measurement"
+
+#: .\templates\landing\anasayfa.html:42
+msgid ""
+"Çöp kutularına koyduğumuz sensörlerimiz, doluluk oranlarını algılar ve M2M "
+"teknolojisi ile bulut sistemimize aktarır."
+msgstr ""
+"Sensors we placed inside garbage bins collect the fullness data and using "
+"M2M technology, transfers them to our cloud server"
+
+#: .\templates\landing\anasayfa.html:52
+msgid "Optimizasyon"
+msgstr "Optimization"
+
+#: .\templates\landing\anasayfa.html:55
+msgid ""
+"Alınan bu veriler sayesinde çöp kutularını toplayan kamyonların rotalarını "
+"optimize ederiz."
+msgstr ""
+"With the help of fillness information of bins, truck routes can be optimized "
+"before collection."
+
+#: .\templates\landing\anasayfa.html:65
+msgid "Kazanç"
+msgstr "Benefit"
+
+#: .\templates\landing\anasayfa.html:68
+msgid ""
+"Optimize edilmiş rotalarımız sayesinde, çöp toplama maliyetlerinizde "
+"<strong>&#37 45</strong>'e varan azalma sağlanır."
+msgstr ""
+"After route optimization process, garbage collection costs can be decreased "
+"up to <strong>&#37 45</strong>."
+
+#: .\templates\landing\base.html:61 .\templates\news\article_base.html:4
+#: .\templates\news\article_base.html:27
+msgid "Haberler"
+msgstr "News"
+
+#: .\templates\landing\base.html:57
+msgid "Nedir"
+msgstr "What is it"
+
+#: .\templates\landing\base.html:58 .\templates\landing\deger.html:4
+#: .\templates\landing\deger.html.py:27
+msgid "Değerler & Faydalar"
+msgstr "Values"
+
+#: .\templates\landing\base.html:59
+msgid "Nasıl Çalışır"
+msgstr "How it works"
+
+#: .\templates\landing\base.html:60 .\templates\landing\hakkimizda.html:4
+#: .\templates\landing\hakkimizda.html:53
+msgid "Hakkımızda"
+msgstr "About Us"
+
+#: .\templates\landing\base.html:61 .\templates\landing\ulasim.html:5
+#: .\templates\landing\ulasim.html.py:19
+msgid "Bize Ulaşın"
+msgstr "Contact Us"
+
+#: .\templates\landing\base.html:97
+msgid "Her hakkı saklıdır"
+msgstr "All right reserved"
+
+#: .\templates\landing\deger.html:31
+msgid ""
+"Günümüzde atık toplama sistemi ,teknolojinin avantajları kullanılmadan, "
+"statik rotalama ve planlama yöntemleriyle yapılmaktadır. Doluluk oranları "
+"dikkate alınmaksızın her çöp konteynerinin ziyaret edilmesi maliyetli ve "
+"verimsiz bir yöntemdir. Kullanılan bu geleneksel sistem, yüklü bir maliyete, "
+"çalışanların ve ekipmanların verimsiz kullanılmasına ve taşıtlar tarafından "
+"doğaya salınan zehirli gazlara bağlı olarak hava kirliliğine sebep "
+"olmaktadır. Sistemimiz Evreka Akıllı Çöp Toplama Sistemi’ni kullanarak, bu "
+"sorunlarınızdan kurtulabilir geleceği şehrinize kazandırabilirsiniz."
+msgstr ""
+"In todays world, wastes are collected without using technology, with static "
+"and unplanned routes. Fillness rates are ignored and all bins are visited "
+"every day resulting inefficient methods and  high costs. Traditional waste "
+"collection system results inefficient usage of stuff, fleets and tools, "
+"pollution from the harmfull gas emission and overflow garbage bins. Evreka "
+"Smart Waste Collection System helps you to get rid of all these concerns and "
+"bring the future to your local."
+
+#: .\templates\landing\deger.html:56
+msgid "Daha az maliyet"
+msgstr "Cost Reduction"
+
+#: .\templates\landing\deger.html:63 .\templates\landing\nedir.html:58
+msgid "Daha iyi hizmet"
+msgstr "Better Service"
+
+#: .\templates\landing\deger.html:70
+msgid "Yeşil belediyecilik anlayışı"
+msgstr "Green Environment"
+
+#: .\templates\landing\deger.html:78
+msgid "Gerçek zamanlı takip"
+msgstr "Real-time Measurement"
+
+#: .\templates\landing\deger.html:85
+msgid "Detaylı raporlama"
+msgstr "Detailed Analysis Reports"
+
+#: .\templates\landing\deger.html:92
+msgid "Verimli filo kullanımı"
+msgstr "Efficient Fleet Usage"
+
+#: .\templates\landing\hakkimizda.html:57
+msgid ""
+"Ekibimiz bir araya geldiği ilk günden bu yana globali hedefleyen yapı ve "
+"vizyonda çalışmalarını sürdürmektedir. Fakat ekibimiz, bunu "
+"gerçekleştirebilmenin ilk adımının, Türkiye’de bir başarı hikayesi yaratmak, "
+"burada sağlam bir çekirdek model oluşturmak olduğuna inanmaktadır. "
+"Dolayısıyla ilk çalışmalarımızı Türkiye’de gerçekleştirdikten sonra mümkün "
+"olduğunca hızlı bir şekilde yurt dışına açılmak şirketimizin ana "
+"hedeflerinden birini oluşturmaktadır."
+msgstr ""
+"Our team focuses on global market since the day they came together. To reach "
+"this goal, at the first step, we believe that we should success in Turkey. "
+"In that vission, we are working hard at METU Technopolis with a govermental "
+"support."
+
+#: .\templates\landing\nasil_calisir.html:4
+#: .\templates\landing\nasil_calisir.html:37
+msgid "Nasıl Çalışır?"
+msgstr "How it works?"
+
+#: .\templates\landing\nasil_calisir.html:40
+msgid ""
+"Geliştirdiğimiz son teknoloji sensör modüllerimiz, çöp konteynırlarının "
+"doluluk oranlarını hassas bir şekilde ölçer.Sensör modüllerimiz tarafından "
+"alınan veri, M2M teknolojisi ile bulut sistemimize aktarılır. Bu veriler "
+"sistemimizde işlenerek saklanır. Bu sayede tüm konteynerler anlık olarak "
+"takip edilebilmektedir. Veriler bu öngörüleme algoritmasında işlenerek çöp "
+"kutularının dolum zamanını tahmin etmekte kullanılır. Bu sayede, bir sonraki "
+"günün rotası önceden oluşturulur ve planlamada kolaylık sağlanır. Öngörüleme "
+"teknolojimiz tarafından toplanmasına karar verilen çöp konteynerleri, "
+"sistemimiz tarafından oluşturalan optimize rotalar sayesinde en verimli "
+"şekilde toplanır. Oluşturulan optimize rotalar, araca yerleştirilecek akıllı "
+"ekranlar sayesinde araç sürücülerine aktarılır. Bununla birlikte sistem, hem "
+"masaüstü hem de mobil cihazlar üzerinden 7/24 kontrol edilip ölçümlenebilir. "
+"Sistem, istenilen zaman diliminde kullanıcıya gerekli raporları sunmaktadır. "
+"Bu raporlar; sistemin süreç boyunca nasıl işlediği, maddi harcamalardaki "
+"iyileştirme ve azalan zararlı gaz salınımı hakkında detaylı bilgiler verir."
+msgstr ""
+"Our sensors delevoped with the latest technology can be easily mounted on "
+"garbage bins and accurately measures the fillness rates before sending to "
+"cloud using m2m technology. These rates are stored in our system to track "
+"all garbage bins on any time. Every day, these rates are processed in "
+"forecasting algorithm to decide which bins need to be visited. Forecasting "
+"algorithms helps to generate the optimized routes. Garbage bins that are "
+"decided to be visited with the help of forecasting algorithm are visited and "
+"wastes are collected in most efficient way. Optimized routes can be reached "
+"and evaluated on both desktop and mobile devices 24/7. Detailed analysis "
+"reports including overall service information, cost reduction improvement "
+"and decrease in emission of harmful gasses are provided within specific time "
+"intervals."
+
+#: .\templates\landing\nedir.html:4
+msgid "Nedir?"
+msgstr "What is it?"
+
+#: .\templates\landing\nedir.html:29
+msgid "Evreka Nedir?"
+msgstr "What is Evreka?"
+
+#: .\templates\landing\nedir.html:33
+msgid ""
+"EVREKA akıllı atık toplama sistemi geleneksel atık toplama sistemlerine "
+"yenilikçi ve çevreci bir çözüm sunmaktadır. Evreka, kablosuz doluluk "
+"algılama sensörleriyle çöp konteynerlerının doluluk oranını anlık olarak "
+"ölçer, M2M teknolojisi ile bu veriyi bulut sistemine gönderir. Topladığı bu "
+"verileri işleyerek optimize edilmiş günlük atık toplama rotaları oluşturur. "
+"Günlük oluşturulan bu rotalar, şoförlerin kolaylıkla kullanabileceği "
+"navigasyon sistemlerine iletilir. Bu sayede optimize edilmiş rotayı takip "
+"eden şoförler sadece gerekli noktaları ziyaret eder. Böylece, zaman ve "
+"enerji kaybı önlenir, karbondioksit salınımı azalır ve çöp toplama "
+"maliyetinde &#37 45’e varan azalmalar görülür."
+msgstr ""
+"Evreka offers an enterprise approach to smart, connected waste management "
+"deployments. Your local account representative will work with you to "
+"evaluate your current waste management situation by conducting an assessment "
+"of your waste and recycling footprint, costs, and drivers to build out a "
+"Evreka Smart Waste Collection System customized to your facility and needs. "
+"Evreka Smart Waste Collection System provides modern solution and green "
+"solution for traditional waste collection systems. Evreka wireless sensors "
+"can measure the garbage bin fillness level instantaneously and send this "
+"information to cloud using m2m technology. These collected information from "
+"all over the city is processed to get the efficient daily collection routes. "
+"These daily routes are transfered to the navigation devices easily used by "
+"drivers. By this way, drivers follow the efficient routes and stop for only "
+"necessary locations. This saves time and energy, decreases CO2 emission and "
+"waste collection costs up to 45%."
+
+#: .\templates\landing\nedir.html:70
+msgid "Maliyette &#37 45'e varan azalma"
+msgstr "Cost reduction Up to %45"
+
+#: .\templates\landing\nedir.html:82
+msgid "Daha az CO2 salınımı"
+msgstr "Less CO2 Emission"
+
+#: .\templates\landing\ulasim.html:67
+msgid "Gönder"
+msgstr "Send"

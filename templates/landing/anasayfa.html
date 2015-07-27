@@ -1,0 +1,137 @@
+{% extends "landing/base.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% block TITLE %}{% trans "Anasayfa" %}{% endblock %}
+
+{% block BEFORE_HEAD_CLOSE %}
+    <style>
+        /* centered columns styles */
+        .row-centered {
+            text-align: center;
+        }
+
+        .col-centered {
+            display: inline-block;
+            float: none;
+            /* reset the text-align */
+            text-align: left;
+            /* inline-block space fix */
+            margin-right: -4px;
+        }
+
+    </style>
+{% endblock %}
+
+
+{% block BODY_BLOCK %}
+
+    <!-- ==== HEADERWRAP ==== -->
+    <div id="headerwrap" class="homepage-header" name="home">
+        <header class="clearfix"><!--i class="fa fa-language icon"></i-->
+            {% if LANGUAGE_CODE == "tr" %}
+                <img src="{% static 'landing/assets/img/evreka_son_logo_slogan-03.png' %}" class="center-block img-responsive"
+                 style="max-height: 256px">
+            {% else %}
+                <img src="{% static 'landing/assets/img/evreka_son_logo_slogan_ing-07.png' %}" class="center-block img-responsive"
+                 style="max-height: 256px">
+            {% endif %}
+<!--            <strong><h1 style="font-weight:bold; color: #273459; letter-spacing: inherit">evreka</h1></strong>
+
+            <p style="font-size:larger; font-weight: bolder; color: #273459; text-shadow: 0px 0px 4px #fefff6;">{% trans "Akıllı Şehirler Yaratır" %}</p>   -->
+
+            <p style="margin-top:80px; font-size:xx-large; font-weight: bolder; color: #273459; text-shadow: 0px 0px 4px #fefff6;">{% trans "Akıllı Çöp Toplama Sistemleri" %}</p>
+        </header>
+    </div>
+    <!-- /headerwrap -->
+
+    <div id="portfolio" name="portfolio">
+        <div class="container">
+            <div class="row">
+                <h2 class="centered">{% trans "Evreka ile daha az maliyet, daha iyi hizmet" %}</h2>
+                <hr>
+            </div>
+            <!-- /row -->
+            <div class="container">
+                <div class="row" id="anasayfa-icons">
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-signal fa-stack-1x text-primary"></i>
+                            </span>
+                            <h4>
+                                <strong>{% trans "Ölçme" %}</strong>
+                            </h4>
+
+                            <p>{% trans "Çöp kutularına koyduğumuz sensörlerimiz, doluluk oranlarını algılar ve M2M teknolojisi ile bulut sistemimize aktarır." %}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-cogs fa-stack-1x text-primary"></i>
+                            </span>
+                            <h4>
+                                <strong>{% trans "Optimizasyon" %}</strong>
+                            </h4>
+
+                            <p>{% trans "Alınan bu veriler sayesinde çöp kutularını toplayan kamyonların rotalarını optimize ederiz." %}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4">
+                        <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                <i class="fa fa-money fa-stack-1x text-primary"></i>
+                            </span>
+                            <h4>
+                                <strong>{% trans "Kazanç" %}</strong>
+                            </h4>
+
+                            <p>{% trans "Optimize edilmiş rotalarımız sayesinde, çöp toplama maliyetlerinizde <strong>&#37 45</strong>'e varan azalma sağlanır." %}</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- /row -->
+            </div>
+            {% get_current_language as LANGUAGE_CODE %}
+            <div class="container" style="margin-top: 20px">
+                <div class="row row-centered">
+                    <div class="media col-xs-10 col-centered">
+                        <div class="media-left media-middle col-md-2 col-xs-4">
+                            <img class="media-object img-responsive"
+                                 src="{% static 'landing/assets/img/European-Union-Flag.png' %}" alt="Avrupa Birliği">
+                        </div>
+                        <div class="media-body col-md-10 col-xs-8">
+                            {% if LANGUAGE_CODE == "tr" %}
+                                <h4 class="media-heading">
+                                    Evreka'ya Avrupa Birliğinden Destek
+                                </h4>
+                                Katıldığımız Avrupa Birliği destekli "Teknoloji Sınır Ötesi'ne Gidiyor" projesini
+                                Kazanan
+                                Takım ve En İyi Teknolojik Çözüm ödülleri ile tamamladık. Bu ödüllerle birlikte Avrupa
+                                Birliği'nden finansal destek almaya hak kazandık.
+                            {% else %}
+                                <h4 class="media-heading">
+                                    Support from European Union
+                                </h4>
+                                We completed EU supported "Technology Goes Beyond Borders" project with Winning Team and
+                                Best Technological Solution Awards. In addition, as Evreka, we become entitled to
+                                receive a financial support from European Union.
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /row -->
+        </div>
+    </div>
+    <!-- container -->
+
+{% endblock %}
+
+
+{% block BEFORE_BODY_CLOSE %}{% endblock %}
